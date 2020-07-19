@@ -11,6 +11,8 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graphics1Component } from './graphics1/graphics1.component';
 import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -21,6 +23,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     ProgressComponent,
     Graphics1Component,
     AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   exports: [
     PagesComponent,
