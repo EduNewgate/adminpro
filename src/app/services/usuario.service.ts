@@ -55,7 +55,7 @@ export class UsuarioService {
         'x-token': token
       }
     }).pipe(
-      tap( (res: any) => {
+      map( (res: any) => {
         const {
           email,
           google,
@@ -66,8 +66,8 @@ export class UsuarioService {
         } = res.usuario;
         this.usuario = new Usuario(nombre, email, '', img, google, role, id);
         localStorage.setItem('token', res.token);
+        return true;
       }),
-      map( res => true),
       catchError( err => of(false))
     );
   }

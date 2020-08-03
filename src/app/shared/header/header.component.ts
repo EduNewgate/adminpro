@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
+import { Usuario } from '../../models/usuario.model';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  public imgUrl = '';
+  public usuario: Usuario;
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
-    this.imgUrl = usuarioService.usuario.imgUrl;
+    this.usuario = usuarioService.usuario;
   }
 
   logout(): void {
