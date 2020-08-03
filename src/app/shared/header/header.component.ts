@@ -10,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  public imgUrl = '';
 
-  logout() {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
+    this.imgUrl = usuarioService.usuario.imgUrl;
+  }
+
+  logout(): void {
     this.usuarioService.logout();
     this.router.navigateByUrl('/login');
   }
